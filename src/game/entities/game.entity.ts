@@ -1,13 +1,14 @@
-import { Prisma } from '@prisma/client';
+import { Genre } from 'src/genre/entities/genre.entity';
+import { Profile } from 'src/profile/entities/profile.entity';
 
-export class Game implements Prisma.GameUncheckedCreateInput {
-  id?: number;
+export class Game {
   title: string;
   gameCover: string;
   description: string;
   year: number;
-  imdb: number;
+  imdb?: number;
   trailer: string;
   gameplayLink: string;
-  profileId: number;
+
+  genres?: Genre[];
 }
