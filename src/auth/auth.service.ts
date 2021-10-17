@@ -18,8 +18,10 @@ export class AuthService {
       sub: user.id,
       username: user.email,
     };
+
+    return { accessToken: this.jwtService.sign(payload) };
   }
-  validateUser(email: string, password: string): User | PromiseLike<User> {
+  async validateUser(email: string, password: string): Promise<User> {
     const user: User = await this.usersService.findByEmail(email);
 
     if (user) {
