@@ -7,6 +7,7 @@ import {
   IsEmail,
   Matches,
 } from 'class-validator';
+import { Cpf } from 'src/decorators/cpf.decorator';
 import { User } from '../entities/user.entity';
 
 export class CreateUserDto extends User {
@@ -32,7 +33,7 @@ export class CreateUserDto extends User {
   )
   password: string;
 
-  @IsString()
+  @Cpf()
   @IsNotEmpty()
   cpf: string;
 }
