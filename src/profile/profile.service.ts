@@ -11,8 +11,8 @@ export class ProfileService {
     return this.prisma.profile.create({ data });
   }
 
-  findAll() {
-    return this.prisma.profile.findMany();
+  findAll(id: number) {
+    return this.prisma.profile.findMany({ where: { userId: id } });
   }
 
   findOne(id: number) {
