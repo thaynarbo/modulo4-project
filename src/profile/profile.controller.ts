@@ -20,7 +20,7 @@ export class ProfileController {
     return this.profileService.create(createProfileDto);
   }
 
-  @Get(':id')
+  @Get('user/:id')
   findAll(@Param('id') id: string) {
     return this.profileService.findAll(+id);
   }
